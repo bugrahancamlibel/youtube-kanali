@@ -1,0 +1,62 @@
+{
+  "slug": "02-solar-superstorm",
+  "number": "02",
+  "name": "Solar Superstorm",
+  "release_tag": "p02-solar-superstorm",
+  "approved": true,
+  "status": "ready",
+  "approved_note": "2026-10-23: kanalın ilk 3 videosu, kullanıcı onayladı",
+  "uploads": [
+    {
+      "id": "short1",
+      "type": "short",
+      "asset": "short1.mp4",
+      "title": "In 1859, the Sky Caught Fire #Shorts",
+      "caption": "In 1859, the Sky Caught Fire #WhatIf #SolarStorm #Space #Science #Shorts",
+      "description": "Could it happen today? Full video on the channel.\n\n#WhatIf #SolarStorm #Space #Science #Shorts",
+      "tags": [
+        "WhatIf",
+        "SolarStorm",
+        "Space",
+        "Science"
+      ],
+      "publish_at": "2026-10-29T20:30:00+03:00",
+      "state": "planned",
+      "attempts": 0
+    },
+    {
+      "id": "long",
+      "type": "long",
+      "asset": "long.mp4",
+      "title": "What If a Solar Superstorm Hit Earth Today?",
+      "caption": "What If a Solar Superstorm Hit Earth Today?",
+      "description": "In 1859, a solar storm set telegraph wires on fire and painted auroras over Cuba. What would happen if a Carrington-class storm hit our modern, electrified world? From the 1989 Quebec blackout to the 2012 near miss, here's what a solar superstorm could do, and how we're preparing.\n\n0:00 The day the sky caught fire\n0:41 How the Sun attacks\n1:17 Warning shots\n1:51 What if it happened today?\n2:34 Life without power\n3:02 It almost happened\n3:28 Can we defend ourselves?\n3:56 Enjoy the show\n\nSources: NASA Science (2014); Baker et al., Space Weather (2013); Lloyd's & AER (2013); NOAA SWPC (Oct 2026); NASA on the May 2024 Gannon storm; ARRL (Starlink, 2022); Wood Mackenzie (2025).\nNarration: AI voice (ElevenLabs).\n\n#WhatIf #SolarStorm #Space #Science",
+      "tags": [
+        "WhatIf",
+        "SolarStorm",
+        "Space",
+        "Science"
+      ],
+      "publish_at": "2026-10-30T20:30:00+03:00",
+      "state": "planned",
+      "attempts": 0
+    },
+    {
+      "id": "short2",
+      "type": "short",
+      "asset": "short2.mp4",
+      "title": "A Solar Storm Almost Hit Us in 2012 #Shorts",
+      "caption": "A Solar Storm Almost Hit Us in 2012 #WhatIf #SolarStorm #Space #Science #Shorts",
+      "description": "A 12% chance within a decade. Full video on the channel.\n\n#WhatIf #SolarStorm #Space #Science #Shorts",
+      "tags": [
+        "WhatIf",
+        "SolarStorm",
+        "Space",
+        "Science"
+      ],
+      "publish_at": "2026-11-01T20:30:00+03:00",
+      "state": "planned",
+      "attempts": 0
+    }
+  ]
+}

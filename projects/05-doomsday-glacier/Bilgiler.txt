@@ -1,0 +1,104 @@
+WHAT IF THE DOOMSDAY GLACIER COLLAPSED?
+=======================================
+
+DURUM: SES BEKLİYOR
+Bu proje seslendirme hariç hazır. Sessiz taslak video GitHub release'inde (draft.mp4): alttaki yazılar
+sadece anlatımın nereye düşeceğini göstermek için var, final videoda olmayacak.
+
+SES GELDİĞİNDE NE OLACAK
+1) Seslendirme bulutta yapılır: GitHub'daki "Seslendirme" iş akışı ElevenLabs API ile sesi üretir
+   ("Max - Elearning and Documentary", Eleven v4). Metin: "ElevenLabs Metni.txt" (3.014 karakter).
+2) Haftalık Claude çalışması sesi cümlelere hizalar, final uzun videoyu ve 2 Shorts'u üretir ve
+   onay için bir GitHub issue'su açar. Issue'ya "onay" yazınca otomatik takvime girer ve yayınlanır.
+
+UZUN VİDEO (YouTube, yatay, taslak süre ~3:31; final süre sese göre biraz değişir)
+Başlık: What If the Doomsday Glacier Collapsed?
+Açıklama:
+In West Antarctica there is a glacier the size of Florida, and scientists warned in 2026 that the ice shelf holding it back could break up this year. We look at why Thwaites is called the Doomsday Glacier, how warm ocean water melts it from below, what its collapse would mean for sea levels and coastal cities, the 40-80 billion dollar plan to shield it with an underwater curtain, and why it is a warning rather than a countdown.
+
+Chapters (yaklaşık, ses gelince güncellenecek):
+0:00 The Doomsday Glacier
+0:28 Why "Doomsday"?
+0:46 Melting from below
+1:16 The brake is failing
+1:47 What if Thwaites collapsed?
+2:15 Living below sea level
+2:31 A curtain under the sea
+3:01 A warning, not a countdown
+
+Narration: AI voice (ElevenLabs)
+Etiketler: #WhatIf #DoomsdayGlacier #Thwaites #Antarctica #SeaLevelRise #Climate #Science
+
+SHORTS PLANI (2. Shorts artık vurucu cümle bitince kesiliyor + son kare donup "WATCH THE FULL VIDEO" kartı)
+SHORTS 1: What If the Doomsday Glacier Collapsed?  (#WhatIf #DoomsdayGlacier #Antarctica #Shorts)
+  Kesit: Bölüm 1 tamamı (soğuk açılış) + başlık kartı, ~29 sn
+  Üst yazı: THE DOOMSDAY / GLACIER  ->  WHAT IF IT / COLLAPSED?
+  Neden burada bitiyor: Başlık kartı ekranda dururken biter.
+  Cümleler:
+    "At the bottom of the world, there's a glacier the size of Florida. In places, it's more than two kilometers thick, and it's slowly sliding into the sea."
+    "Scientists call it Thwaites. Everyone else calls it the Doomsday Glacier."
+    "And this year, researchers warned that the ice shelf holding it back is poised to break apart."
+    "So what would happen if the Doomsday Glacier collapsed?"
+SHORTS 2: A $40-80 Billion Curtain to Save the Doomsday Glacier?  (#Antarctica #Climate #Science #Shorts)
+  Kesit: Bölüm 7, ilk 3 cümle, ~23 sn
+  Üst yazı: A GIANT CURTAIN / UNDER THE SEA?  ->  THE PRICE: / $40-80 BILLION
+  Neden burada bitiyor: "...to keep it running." cümlesi bitince; son kare: dev fiyat etiketi.
+  Cümleler:
+    "To save the Doomsday Glacier, some scientists want to build a giant curtain under the sea."
+    "An eighty-kilometer barrier on the seafloor, six hundred meters down, to block the warm water before it reaches the ice."
+    "The price? Forty to eighty billion dollars, plus up to two billion every year to keep it running."
+
+SENARYO
+--- Bölüm 1 ---
+At the bottom of the world, there's a glacier the size of Florida. In places, it's more than two kilometers thick, and it's slowly sliding into the sea.
+Scientists call it Thwaites. Everyone else calls it the Doomsday Glacier.
+And this year, researchers warned that the ice shelf holding it back is poised to break apart.
+So what would happen if the Doomsday Glacier collapsed?
+
+--- Bölüm 2 ---
+Thwaites alone holds enough ice to raise global sea levels by about sixty-five centimeters.
+But the real danger is what's behind it. Thwaites works like a cork for the West Antarctic Ice Sheet. Pull the cork, and seas could eventually rise by more than three meters.
+
+--- Bölüm 3 ---
+The threat isn't warm air. It's warm water.
+Relatively warm water from the deep ocean flows beneath the glacier and melts it from below. With the tides, seawater can push up to ten kilometers under the ice.
+And the ground beneath Thwaites gets deeper the farther inland you go. So as the glacier retreats, more and more ice meets the water.
+Since the 1980s, Thwaites has already lost more than six hundred billion tons of ice.
+
+--- Bölüm 4 ---
+For now, something slows it down: a floating ice shelf, pinned on an underwater ridge like a brake.
+But the brake is failing. Giant cracks are spreading across it by up to two kilometers a year, and it's losing its grip on the ridge.
+In 2026, a British Antarctic Survey scientist said the shelf is very likely to break up this year.
+Losing it won't make Thwaites collapse overnight. But without the brake, the ice behind it can flow faster.
+
+--- Bölüm 5 ---
+So let's imagine Thwaites collapses.
+It wouldn't happen in a day. Scientists expect a full collapse to take centuries, though no one knows exactly how fast.
+But even sixty-five centimeters would redraw the world's coastlines. Around 680 million people live in low-lying coastal areas.
+And seas are already rising. The IPCC expects that by 2050, at many coasts, floods that used to come once a century will strike every year.
+
+--- Bölüm 6 ---
+Some places already live with this. About a quarter of the Netherlands lies below sea level, protected by dikes, dunes and giant storm barriers.
+With three meters, much of the world would have to do the same. Or move.
+
+--- Bölüm 7 ---
+To save the Doomsday Glacier, some scientists want to build a giant curtain under the sea.
+An eighty-kilometer barrier on the seafloor, six hundred meters down, to block the warm water before it reaches the ice.
+The price? Forty to eighty billion dollars, plus up to two billion every year to keep it running.
+Critics say it's too risky, too remote, and a distraction from cutting emissions. A first test could come in Norway in 2027.
+
+--- Bölüm 8 ---
+Meanwhile, scientists are watching Thwaites more closely than ever. In 2020, a robot called Icefin even swam beneath the ice to see how it melts.
+So will the Doomsday Glacier doom us? Not tomorrow. But the ice is moving, and every centimeter counts.
+We can't refreeze Antarctica. But we can still slow the warming, and get our coasts ready.
+Because this glacier isn't a countdown. It's a warning.
+
+KAYNAKLAR
+- Live Science (28 May 2026) - Robert Larter (British Antarctic Survey): ice shelf breakup "very likely" this year; 65 cm; >3 m West Antarctica: https://www.livescience.com/planet-earth/antarctica/the-doomsday-glacier-is-poised-to-lose-its-ice-shelf-this-year-an-antarctic-researcher-explains-what-that-means-for-global-sea-levels
+- Earth.com (8 Jun 2026) - "poised to disintegrate", size of Florida, >2,000 m thick in places, collapse over centuries: https://www.earth.com/climate/doomsday-glacier-is-about-to-lose-its-last-natural-brake/
+- International Thwaites Glacier Collaboration - findings (tidal pumping up to 10 km, shelf breakup not a sudden acceleration): https://thwaitesglacier.org/findings
+- Thwaites Ice Shelf (rifts up to 2 km/yr, pinning point, >600 billion tons lost since the 1980s): https://en.wikipedia.org/wiki/Thwaites_Ice_Shelf
+- IPCC SROCC (2019) - ~680 million people in low-lying coastal zones; once-a-century extreme sea levels annually at many locations by 2050: https://www.ipcc.ch/srocc/
+- Mongabay (Sep 2025) - seabed curtain: 80 km, ~600 m deep, $40-80 bn + $1-2 bn/yr, Norway test hoped for 2027; critique by 42 polar scientists (Frontiers in Science, 2025): https://news.mongabay.com/2025/09/scientists-weigh-giant-sea-curtain-to-shield-doomsday-glacier-from-melting/
+- Netherlands: about a quarter of the country lies below sea level - genel bilgi (Rijkswaterstaat)
+- Icefin robot under Thwaites (Jan 2020; Schmidt et al., Nature 2023) - genel bilgi

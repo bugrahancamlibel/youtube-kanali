@@ -1,0 +1,109 @@
+WHAT IF QUANTUM COMPUTERS BROKE ALL ENCRYPTION?
+===============================================
+
+DURUM: SES BEKLİYOR
+Bu proje seslendirme hariç hazır. Sessiz taslak video GitHub release'inde (draft.mp4): alttaki yazılar
+sadece anlatımın nereye düşeceğini göstermek için var, final videoda olmayacak.
+
+SES GELDİĞİNDE NE OLACAK
+1) Seslendirme bulutta yapılır: GitHub'daki "Seslendirme" iş akışı ElevenLabs API ile sesi üretir
+   ("Max - Elearning and Documentary", Eleven v4). Metin: "ElevenLabs Metni.txt" (3.355 karakter).
+2) Haftalık Claude çalışması sesi cümlelere hizalar, final uzun videoyu ve 2 Shorts'u üretir ve
+   onay için bir GitHub issue'su açar. Issue'ya "onay" yazınca otomatik takvime girer ve yayınlanır.
+
+UZUN VİDEO (YouTube, yatay, taslak süre ~3:41; final süre sese göre biraz değişir)
+Başlık: What If Quantum Computers Broke All Encryption?
+Açıklama:
+Every card payment, private message and bank login is protected by math that would take today's supercomputers millions of years to crack. A big enough quantum computer could break it in days. Experts call that moment Q-Day. We look at how public-key encryption works, why the number of qubits needed to break it keeps shrinking, what would happen on Q-Day, why millions of bitcoin (including Satoshi's) are exposed, and the race to switch the internet to post-quantum locks before it arrives.
+
+Chapters (yaklaşık, ses gelince güncellenecek):
+0:00 Q-Day
+0:29 The padlock behind the internet
+0:48 Quantum computers
+1:17 The shrinking target
+1:46 What if Q-Day came tomorrow?
+2:10 Bitcoin's quantum problem
+2:47 The new locks
+3:14 When is Q-Day?
+
+Narration: AI voice (ElevenLabs)
+Etiketler: #WhatIf #QuantumComputing #QDay #Encryption #Bitcoin #Cybersecurity #PostQuantum
+
+SHORTS PLANI (2. Shorts artık vurucu cümle bitince kesiliyor + son kare donup "WATCH THE FULL VIDEO" kartı)
+SHORTS 1: What If Quantum Computers Broke All Encryption?  (#WhatIf #Quantum #Encryption #Shorts)
+  Kesit: Bölüm 1 tamamı (soğuk açılış) + başlık kartı, ~30 sn
+  Üst yazı: WHAT IF QUANTUM / BROKE ENCRYPTION?  ->  THEY CALL IT / Q-DAY
+  Neden burada bitiyor: Başlık kartı ("What if quantum computers broke all encryption?") ekranda dururken biter.
+  Cümleler:
+    "It's an ordinary morning. You tap your card, send a message, and log into your bank."
+    "Every one of those actions is protected by math so hard that today's best supercomputers would need millions of years to crack it."
+    "Now imagine that one morning, a single machine can break it in days."
+    "No alarms. No explosions. Just secrets, suddenly readable. Experts even have a name for that day: Q-Day."
+SHORTS 2: Could a Quantum Computer Take Satoshi's Bitcoin?  (#Bitcoin #Quantum #Crypto #Shorts)
+  Kesit: Bölüm 6, ilk 4 cümle, ~31 sn
+  Üst yazı: QUANTUM COMPUTERS / VS BITCOIN  ->  SATOSHI'S / 1.1M BITCOIN
+  Neden burada bitiyor: "...could simply take them." cümlesi bitince; son kare: sandıktan kuantum bilgisayara uçan coinler + TAKEN.
+  Cümleler:
+    "Now think about Bitcoin. Its wallets are guarded by elliptic-curve cryptography, exactly the kind of math a big enough quantum computer could break."
+    "One industry group estimates that about 6.4 million bitcoin, roughly thirty percent of all coins, sit in addresses whose public keys are already exposed."
+    "Around 1.1 million of them are believed to belong to Bitcoin's mysterious creator, Satoshi Nakamoto, untouched for over fifteen years."
+    "The first quantum computer strong enough could simply take them."
+
+SENARYO
+--- Bölüm 1 ---
+It's an ordinary morning. You tap your card, send a message, and log into your bank.
+Every one of those actions is protected by math so hard that today's best supercomputers would need millions of years to crack it.
+Now imagine that one morning, a single machine can break it in days.
+No alarms. No explosions. Just secrets, suddenly readable. Experts even have a name for that day: Q-Day.
+
+--- Bölüm 2 ---
+Almost everything online is guarded by public-key cryptography. You hand out a public key, like an open padlock that anyone can snap shut.
+Only you hold the private key that opens it. And working backwards, from the padlock to the key, is practically impossible for normal computers.
+
+--- Bölüm 3 ---
+Quantum computers play by different rules. Their qubits use superposition and interference to attack certain problems in a completely new way.
+In 1994, a mathematician named Peter Shor showed that a big enough quantum computer could pick exactly these locks.
+For decades, that was only theory. Real machines were far too small, and far too noisy.
+Google's Willow chip, unveiled in 2024, has 105 qubits. Breaking real encryption would take a machine many times bigger.
+
+--- Bölüm 4 ---
+But here's what has experts nervous. The size of that machine keeps shrinking.
+In 2012, researchers estimated that breaking a common lock called RSA would take up to a billion qubits. By 2019, twenty million. In 2025, Google said under one million.
+This year, new studies pushed it below a hundred thousand. One even claimed ten thousand could be enough.
+The machines are growing. And the finish line is moving toward them.
+
+--- Bölüm 5 ---
+So, what if Q-Day came tomorrow?
+Any system still using the old locks could be opened. Bank connections, card payments, private messages.
+Attackers could impersonate websites and forge software updates that your phone would trust.
+And part of the attack may already be happening. Spies can record encrypted data today, and simply wait. It's called harvest now, decrypt later.
+
+--- Bölüm 6 ---
+Now think about Bitcoin. Its wallets are guarded by elliptic-curve cryptography, exactly the kind of math a big enough quantum computer could break.
+One industry group estimates that about 6.4 million bitcoin, roughly thirty percent of all coins, sit in addresses whose public keys are already exposed.
+Around 1.1 million of them are believed to belong to Bitcoin's mysterious creator, Satoshi Nakamoto, untouched for over fifteen years.
+The first quantum computer strong enough could simply take them.
+Some now argue those coins should be frozen. Others say that would break Bitcoin's most sacred rule.
+
+--- Bölüm 7 ---
+The good news? We already have new locks. In 2024, the US standards agency NIST published its first post-quantum encryption standards.
+They're built on math problems that are believed to stump even quantum computers.
+NIST has proposed retiring today's vulnerable locks by 2035. Google set itself a deadline of 2029.
+But changing the locks on the entire internet is a monumental job. Every bank, every phone, every smart device.
+
+--- Bölüm 8 ---
+So when is Q-Day? Nobody knows. Some experts say as early as 2028. Most estimates land somewhere around 2030.
+And the same machines could also help design new medicines and materials, and simulate nature like never before.
+The real race isn't to build the machine. It's to change the locks before it arrives.
+Because on Q-Day, there won't be an alarm.
+
+KAYNAKLAR
+- CoinDesk (31 Mar 2026) - Caltech/Oratomic preprint: ~10,000 physical qubits could be enough; ECC-256 ~26,000 qubits / ~10 days (authors are Oratomic shareholders): https://www.coindesk.com/markets/2026/03/31/quantum-computers-could-break-crypto-wallet-encryption-with-just-10-000-qubits-researchers-say
+- The Quantum Insider (31 Mar 2026) - estimates for RSA-2048: 2012 up to ~1 billion, 2019 ~20 million, 2025 <1 million (Gidney), 2026 <100,000 (Iceberg Quantum); Google ECDLP-256 <500,000: https://thequantuminsider.com/2026/03/31/q-day-just-got-closer-three-papers-in-three-months-are-rewriting-the-quantum-threat-timeline/
+- Gidney (2025), How to factor 2048 bit RSA integers with less than a million noisy qubits: https://arxiv.org/abs/2505.15917
+- CoinDesk (16 Oct 2026) - Quantum Alliance estimate: 6.4M BTC (30.2% of supply) with exposed public keys; ~1.1M BTC attributed to Satoshi; freeze debate: https://www.coindesk.com/tech/2026/10/16/experts-agree-quantum-computers-could-put-satoshi-s-bitcoin-at-risk-but-not-on-what-s-next
+- The Block (16 Oct 2026) - Google Willow magic-state result, expert Q-Day timelines: https://www.theblock.co/news/web3/2026-10-16-google-quantum-computing-breakthrough-418787
+- FXStreet (22 Oct 2026) - Willow 105 qubits, Google 2029 PQC deadline, 2028-2031 window: https://www.fxstreet.com/cryptocurrencies/news/the-estimates-keep-falling-why-bitcoins-quantum-countdown-is-accelerating-202610221331
+- NIST (13 Aug 2024) - first post-quantum standards FIPS 203/204/205: https://www.nist.gov/news-events/news/2024/08/nist-releases-first-3-finalized-post-quantum-encryption-standards
+- NIST IR 8547 (draft, Nov 2024) - deprecate quantum-vulnerable algorithms after 2030, disallow after 2035: https://www.encryptionconsulting.com/nist-ir-8547-2030-2035-action-plan/
+- Peter Shor (1994), Shor's algorithm - genel bilgi

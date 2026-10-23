@@ -1,0 +1,66 @@
+{
+  "slug": "04-quantum-qday",
+  "number": "04",
+  "name": "Quantum Q-Day",
+  "release_tag": "p04-quantum-qday",
+  "approved": false,
+  "status": "needs_voice",
+  "factory_dir": "qday",
+  "note": "Sessiz taslak hazır (release: draft.mp4). Ses gelince final video + 2 Shorts üretilip onaya sunulacak.",
+  "uploads": [
+    {
+      "id": "short1",
+      "type": "short",
+      "asset": "short1.mp4",
+      "title": "What If Quantum Computers Broke All Encryption? #Shorts",
+      "caption": "What If Quantum Computers Broke All Encryption? #WhatIf #QuantumComputing #QDay #Encryption #Bitcoin #Cybersecurity #Shorts",
+      "description": "They call it Q-Day. Full video on the channel.\n\n#WhatIf #QuantumComputing #QDay #Encryption #Bitcoin #Cybersecurity #Shorts",
+      "tags": [
+        "WhatIf",
+        "QuantumComputing",
+        "QDay",
+        "Encryption",
+        "Bitcoin",
+        "Cybersecurity"
+      ],
+      "state": "planned",
+      "attempts": 0
+    },
+    {
+      "id": "long",
+      "type": "long",
+      "asset": "long.mp4",
+      "title": "What If Quantum Computers Broke All Encryption?",
+      "caption": "What If Quantum Computers Broke All Encryption?",
+      "description": "Every card payment, private message and bank login is protected by math that would take today's supercomputers millions of years to crack. A big enough quantum computer could break it in days. Experts call that moment Q-Day. How public-key encryption works, why the number of qubits needed to break it keeps shrinking, what would happen on Q-Day, why millions of bitcoin (including Satoshi's) are exposed, and the race to switch the internet to post-quantum locks.\n\nSources: Caltech/Oratomic preprint (2026); Gidney (2025); Iceberg Quantum (2026); Google Quantum AI ECDLP whitepaper (2026); Quantum Alliance estimate (Oct 2026); NIST FIPS 203/204/205 (2024); NIST IR 8547 draft (2024).\nNarration: AI voice (ElevenLabs).\n\n#WhatIf #QuantumComputing #QDay #Encryption #Bitcoin #Cybersecurity\n(Chapters will be added after the voice-over.)",
+      "tags": [
+        "WhatIf",
+        "QuantumComputing",
+        "QDay",
+        "Encryption",
+        "Bitcoin",
+        "Cybersecurity"
+      ],
+      "state": "planned",
+      "attempts": 0
+    },
+    {
+      "id": "short2",
+      "type": "short",
+      "asset": "short2.mp4",
+      "title": "Could a Quantum Computer Take Satoshi's Bitcoin? #Shorts",
+      "caption": "Could a Quantum Computer Take Satoshi's Bitcoin? #WhatIf #QuantumComputing #QDay #Encryption #Bitcoin #Cybersecurity #Shorts",
+      "description": "6.4 million bitcoin have exposed public keys. Full video on the channel.\n\n#WhatIf #QuantumComputing #QDay #Encryption #Bitcoin #Cybersecurity #Shorts",
+      "tags": [
+        "WhatIf",
+        "QuantumComputing",
+        "QDay",
+        "Encryption",
+        "Bitcoin",
+        "Cybersecurity"
+      ],
+      "state": "planned",
+      "attempts": 0
+    }
+  ]
+}

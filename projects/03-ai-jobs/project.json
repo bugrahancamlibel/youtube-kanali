@@ -1,0 +1,62 @@
+{
+  "slug": "03-ai-jobs",
+  "number": "03",
+  "name": "AI Jobs",
+  "release_tag": "p03-ai-jobs",
+  "approved": true,
+  "status": "ready",
+  "approved_note": "2026-10-23: kanalın ilk 3 videosu, kullanıcı onayladı",
+  "uploads": [
+    {
+      "id": "short1",
+      "type": "short",
+      "asset": "short1.mp4",
+      "title": "What If AI Took Every Job? #Shorts",
+      "caption": "What If AI Took Every Job? #WhatIf #AI #Jobs #FutureOfWork #Shorts",
+      "description": "Paradise... or disaster? Full video on the channel.\n\n#WhatIf #AI #Jobs #FutureOfWork #Shorts",
+      "tags": [
+        "WhatIf",
+        "AI",
+        "Jobs",
+        "FutureOfWork"
+      ],
+      "publish_at": "2026-10-24T20:30:00+03:00",
+      "state": "planned",
+      "attempts": 0
+    },
+    {
+      "id": "long",
+      "type": "long",
+      "asset": "long.mp4",
+      "title": "What If AI Took All the Jobs?",
+      "caption": "What If AI Took All the Jobs?",
+      "description": "What would happen if AI could do every job, from cashier to CEO? What's already happening, why this time might be different, what history tells us, who would get paid in a fully automated economy, universal basic income experiments, and what might stay human.\n\n0:00 A world without work\n0:29 It's already starting\n0:50 We've been here before\n1:25 Why this time is different\n1:55 What if AI did everything?\n2:24 Universal basic income\n2:54 More than money\n3:12 What stays human\n\nSources: Barclays Q3 2026 results; Brynjolfsson, Chandar & Chen (Stanford Digital Economy Lab, 2025); IMF Gen-AI report (2024); Autor et al., QJE (2024); OpenResearch Unconditional Cash Study (2024); Alaska Permanent Fund; Keynes (1930); Chess.com (2026).\nNarration: AI voice (ElevenLabs).\n\n#WhatIf #AI #Jobs #FutureOfWork",
+      "tags": [
+        "WhatIf",
+        "AI",
+        "Jobs",
+        "FutureOfWork"
+      ],
+      "publish_at": "2026-10-25T20:30:00+03:00",
+      "state": "planned",
+      "attempts": 0
+    },
+    {
+      "id": "short2",
+      "type": "short",
+      "asset": "short2.mp4",
+      "title": "If AI Takes Every Job, Who Gets Paid? #Shorts",
+      "caption": "If AI Takes Every Job, Who Gets Paid? #WhatIf #AI #Jobs #FutureOfWork #Shorts",
+      "description": "The $1,000-a-month experiment. Full video on the channel.\n\n#WhatIf #AI #Jobs #FutureOfWork #Shorts",
+      "tags": [
+        "WhatIf",
+        "AI",
+        "Jobs",
+        "FutureOfWork"
+      ],
+      "publish_at": "2026-10-27T20:30:00+03:00",
+      "state": "planned",
+      "attempts": 0
+    }
+  ]
+}

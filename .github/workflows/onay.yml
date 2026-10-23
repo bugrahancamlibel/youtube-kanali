@@ -1,0 +1,48 @@
+name: Onay
+# "[Onay]" issue'larına senin yazdığın "onay" / "ret" yorumunu işler; onaylanınca takvime alır.
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: yayin
+  cancel-in-progress: false
+
+jobs:
+  onay:
+    if: ${{ !github.event.issue.pull_request && contains(github.event.issue.labels.*.name, 'onay-bekliyor') && github.event.comment.user.login == github.repository_owner }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests
+      - name: Onayı işle
+        env:
+          COMMENT: ${{ github.event.comment.body }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          GH_TOKEN: ${{ github.token }}
+        run: python publisher/approve.py
+      - name: Sırası geleni yayınla
+        env:
+          UPLOAD_POST_API_KEY: ${{ secrets.UPLOAD_POST_API_KEY }}
+          GH_TOKEN: ${{ github.token }}
+        run: python publisher/publish.py
+      - name: Durumu kaydet
+        if: always()
+        run: |
+          git config user.name "yayin-botu"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A projects YAYIN_TAKVIMI.md
+          if ! git diff --cached --quiet; then
+            git commit -m "Onay islendi"
+            git pull --rebase
+            git push
+          fi

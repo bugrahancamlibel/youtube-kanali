@@ -1,0 +1,87 @@
+PROJE 02 - SOLAR SUPERSTORM
+============================
+
+UZUN VİDEO (YouTube, yatay, ~4:21)
+Başlık: What If a Solar Superstorm Hit Earth Today?
+Açıklama:
+In 1859, a solar storm set telegraph wires on fire and painted auroras over Cuba. What would happen if a Carrington-class storm hit our modern, electrified world? From the 1989 Quebec blackout to the 2012 near miss, here's what a solar superstorm could do, and how we're preparing.
+
+Chapters:
+0:00 The day the sky caught fire
+0:41 How the Sun attacks
+1:17 Warning shots
+1:51 What if it happened today?
+2:34 Life without power
+3:02 It almost happened
+3:28 Can we defend ourselves?
+3:56 Enjoy the show
+
+Etiketler: #WhatIf #SolarStorm #Space #Science #Sun #NorthernLights
+(Not: bölüm zamanları yaklaşıktır, yüklemeden önce kontrol et.)
+
+SHORTS 1: In 1859, the Sky Caught Fire  (#WhatIf #SolarStorm #Space #Shorts)
+SHORTS 2: A Solar Storm Almost Hit Us in 2012  (#SolarStorm #Space #Science #Shorts)
+
+SES: ElevenLabs - Max (Elearning and Documentary), Eleven v4
+
+SENARYO
+--- Bölüm 1 ---
+On a September morning in 1859, an astronomer named Richard Carrington was sketching sunspots...
+when two blinding white lights flared up on the Sun.
+Less than a day later, the sky caught fire. Auroras lit up Cuba, Hawaii, even Colombia.
+Telegraph wires threw sparks. Some operators got electric shocks. Others unplugged their batteries, and kept sending messages anyway.
+Back then, it was a curiosity. Today, it could be a catastrophe.
+So what would happen if a storm like that hit us now?
+
+--- Bölüm 2 ---
+Our Sun is not a calm ball of light. It's a churning knot of plasma and magnetic fields.
+Sometimes those fields snap, and the Sun hurls out a coronal mass ejection: billions of tons of charged gas, racing through space.
+Most of them miss us. But the Carrington storm crossed the 150 million kilometers to Earth in about seventeen hours.
+When a storm like that hits, Earth's magnetic field shakes. And that shaking pushes electric currents through anything long and made of metal.
+
+--- Bölüm 3 ---
+We have already had a few warning shots.
+In 1989, a storm knocked out Quebec's power grid in less than ninety seconds. Millions of people sat in the dark for nine hours.
+In 2022, a fairly modest storm puffed up the upper atmosphere, and dragged about forty brand-new Starlink satellites out of orbit.
+And in May 2024, the strongest storm in twenty years sent GPS-guided tractors in the American Midwest wandering off course.
+None of these came close to Carrington.
+
+--- Bölüm 4 ---
+So let's imagine it. Day zero. A giant flare erupts.
+Eight minutes later, its light hits us. Radio goes quiet across the daylight side of the planet.
+Next comes a storm of particles. Satellites glitch. GPS gets confused. Flights reroute away from the poles.
+Then the main blow arrives. Currents surge into the power grid, and huge transformers, the hearts of the network, start to overheat.
+If enough of them fail, entire regions go dark. And these machines are custom-built. Ordering a new one today can take more than two years.
+
+--- Bölüm 5 ---
+Without electricity, water pumps stop. Fuel pumps stop.
+Card payments, phone towers, refrigerated medicine. Almost everything we depend on runs on the grid.
+Lloyd's of London estimated that a Carrington-level storm could leave twenty to forty million Americans without power, for weeks, or even up to two years.
+The cost for the US alone: as much as two point six trillion dollars.
+
+--- Bölüm 6 ---
+And here's the unsettling part. It almost happened.
+In July 2012, the Sun launched a storm at least as strong as Carrington's.
+It tore through Earth's orbit, about a week after our planet had passed by. A NASA spacecraft in its path recorded everything.
+One scientist estimated a twelve percent chance of a Carrington-class storm hitting Earth within a decade.
+
+--- Bölüm 7 ---
+The good news? We are not blind anymore.
+Spacecraft parked between us and the Sun watch the solar wind, and can give us about fifteen to sixty minutes of warning.
+Grid operators can reduce the load. Quebec redesigned its network after 1989. Satellites can switch to safe mode, and planes can change course.
+It won't make us immune. But it can turn a catastrophe into a very bad week.
+
+--- Bölüm 8 ---
+Just this October, a strong storm painted auroras across the northern sky. The Sun has only just passed the peak of its eleven-year cycle.
+So the next time you see the northern lights much farther south than usual, enjoy the show.
+It's beautiful. It's also a reminder from our star of who is really in charge.
+
+KAYNAKLAR
+- Carrington Event, 1-2 Sept 1859 (Wikipedia summary of historical records)
+- NASA Science, "Near Miss: The Solar Superstorm of July 2012" (2014); Baker et al., Space Weather (2013); P. Riley, Space Weather (12% estimate)
+- March 1989 geomagnetic storm - Hydro-Quebec blackout
+- ARRL / SpaceX - ~40 Starlink satellites lost, Feb 2022
+- NASA - May 2024 "Gannon" G5 storm (GPS tractors, flight reroutes)
+- Lloyd's & AER, Solar Storm Risk to the North American Electric Grid (2013): $0.6-2.6T, 20-40M people
+- NOAA SWPC - G3 storm, 10 Oct 2026; DSCOVR at L1: 15-60 min warning
+- Wood Mackenzie (2025) via Simple Thread - transformer lead times (~2.5 years)

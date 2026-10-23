@@ -1,0 +1,13 @@
+{
+ "HL": {"1": 0.36, "2": 0.42, "3": 0.36, "4": 0.6, "5": 0.45, "6": 0.34, "7": 0.34},
+ "shorts": [
+  {"out": "Short 1 - What If the Doomsday Glacier Collapsed.mp4",
+   "first": [0, 0], "last": [0, 3], "tail": 2.0,
+   "hook": [[["THE DOOMSDAY", "#ffffff"]], [["GLACIER", "#3ee0ff"]]],
+   "hook2": [[["WHAT IF IT", "#ffffff"]], [["COLLAPSED?", "#ff4757"]]], "hook2_line": [0, 3], "freeze": -0.3},
+  {"out": "Short 2 - A Giant Curtain to Save the Doomsday Glacier.mp4",
+   "first": [6, 0], "last": [6, 2], "tail": 0.7,
+   "hook": [[["A GIANT CURTAIN", "#ffffff"]], [["UNDER THE SEA?", "#3ee0ff"]]],
+   "hook2": [[["THE PRICE:", "#ffffff"]], [["$40-80 BILLION", "#ffd23f"]]], "hook2_line": [6, 2], "freeze": -0.3}
+ ]
+}

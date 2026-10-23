@@ -1,0 +1,13 @@
+{
+ "HL": {"1": 0.34, "2": 0.45, "3": 0.34, "4": 0.6, "5": 0.42, "6": 0.36, "7": 0.36},
+ "shorts": [
+  {"out": "Short 1 - What If Quantum Computers Broke All Encryption.mp4",
+   "first": [0, 0], "last": [0, 3], "tail": 2.0,
+   "hook": [[["WHAT IF QUANTUM", "#ffffff"]], [["BROKE ENCRYPTION?", "#b28cff"]]],
+   "hook2": [[["THEY CALL IT", "#ffffff"]], [["Q-DAY", "#ff4f81"]]], "hook2_line": [0, 3], "freeze": -0.3},
+  {"out": "Short 2 - Could a Quantum Computer Take Satoshi's Bitcoin.mp4",
+   "first": [5, 0], "last": [5, 3], "tail": 0.7,
+   "hook": [[["QUANTUM COMPUTERS", "#ffffff"]], [["VS BITCOIN", "#f7931a"]]],
+   "hook2": [[["SATOSHI'S", "#ffffff"]], [["1.1M BITCOIN", "#f7931a"]]], "hook2_line": [5, 2], "freeze": -0.3}
+ ]
+}

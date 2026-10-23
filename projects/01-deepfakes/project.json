@@ -1,0 +1,59 @@
+{
+  "slug": "01-deepfakes",
+  "number": "01",
+  "name": "Deepfakes",
+  "release_tag": "p01-deepfakes",
+  "approved": true,
+  "status": "ready",
+  "approved_note": "2026-10-23: kanalın ilk 3 videosu, kullanıcı onayladı",
+  "uploads": [
+    {
+      "id": "short1",
+      "type": "short",
+      "asset": "short1.mp4",
+      "title": "You Can No Longer Trust Your Eyes #Shorts",
+      "caption": "You Can No Longer Trust Your Eyes #AI #Deepfake #Technology #Shorts",
+      "description": "One of these faces is fake... or is it? Full video on the channel.\n\n#AI #Deepfake #Technology #Shorts",
+      "tags": [
+        "AI",
+        "Deepfake",
+        "Technology"
+      ],
+      "publish_at": "2026-11-03T20:30:00+03:00",
+      "state": "planned",
+      "attempts": 0
+    },
+    {
+      "id": "long",
+      "type": "long",
+      "asset": "long.mp4",
+      "title": "You Can No Longer Trust Your Eyes | How Deepfakes Fool Everyone",
+      "caption": "You Can No Longer Trust Your Eyes | How Deepfakes Fool Everyone",
+      "description": "What if you couldn't tell the difference between reality and a fake video? How deepfakes were born, how good they've become, the $25 million deepfake video call, deepfakes in elections, the liar's dividend, and how to protect yourself.\n\n0:00 Neither of them exists\n0:26 The duel that created deepfakes\n1:00 How good did it get?\n1:29 The $25 million video call\n2:09 Deepfakes and elections\n2:42 The liar's dividend\n3:00 Fighting back\n3:41 How to protect yourself\n\nSources: iProov (2025); Miller et al., Psychological Science (2023); CNN (2024, Arup); Deloitte (2024); NPR/WBUR (2024); HKS Misinformation Review (2024); Chesney & Citron (2019); EU AI Act Art. 50; TAKE IT DOWN Act (2025).\nNarration: AI voice (ElevenLabs).\n\n#AI #Deepfake #Technology",
+      "tags": [
+        "AI",
+        "Deepfake",
+        "Technology"
+      ],
+      "publish_at": "2026-11-04T20:30:00+03:00",
+      "state": "planned",
+      "attempts": 0
+    },
+    {
+      "id": "short2",
+      "type": "short",
+      "asset": "short2.mp4",
+      "title": "He Sent $25 Million After One Video Call #Shorts",
+      "caption": "He Sent $25 Million After One Video Call #AI #Deepfake #Technology #Shorts",
+      "description": "Every face on the call was a deepfake. Full video on the channel.\n\n#AI #Deepfake #Technology #Shorts",
+      "tags": [
+        "AI",
+        "Deepfake",
+        "Technology"
+      ],
+      "publish_at": "2026-11-06T20:30:00+03:00",
+      "state": "planned",
+      "attempts": 0
+    }
+  ]
+}

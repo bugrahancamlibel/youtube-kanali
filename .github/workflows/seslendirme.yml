@@ -1,0 +1,34 @@
+name: Seslendirme
+# ElevenLabs API ile bir projenin anlatımını üretir (anahtar repo secret'ında durur).
+# Haftalık Claude çalışması bunu otomatik tetikler; elle de çalıştırılabilir.
+on:
+  workflow_dispatch:
+    inputs:
+      project:
+        description: 'Proje klasörü (örnek: 04-quantum-qday)'
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  tts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests
+      - name: Ses üret
+        env:
+          PROJECT: ${{ inputs.project }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVENLABS_VOICE_ID: ${{ vars.ELEVENLABS_VOICE_ID }}
+        run: python publisher/tts.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vo-${{ inputs.project }}
+          path: out/
+          retention-days: 14

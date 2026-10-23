@@ -1,0 +1,66 @@
+{
+  "slug": "05-doomsday-glacier",
+  "number": "05",
+  "name": "Doomsday Glacier",
+  "release_tag": "p05-doomsday-glacier",
+  "approved": false,
+  "status": "needs_voice",
+  "factory_dir": "glacier",
+  "note": "Sessiz taslak hazır (release: draft.mp4). Ses gelince final video + 2 Shorts üretilip onaya sunulacak.",
+  "uploads": [
+    {
+      "id": "short1",
+      "type": "short",
+      "asset": "short1.mp4",
+      "title": "What If the Doomsday Glacier Collapsed? #Shorts",
+      "caption": "What If the Doomsday Glacier Collapsed? #WhatIf #DoomsdayGlacier #Thwaites #Antarctica #SeaLevelRise #Science #Shorts",
+      "description": "A glacier the size of Florida is losing its brake. Full video on the channel.\n\n#WhatIf #DoomsdayGlacier #Thwaites #Antarctica #SeaLevelRise #Science #Shorts",
+      "tags": [
+        "WhatIf",
+        "DoomsdayGlacier",
+        "Thwaites",
+        "Antarctica",
+        "SeaLevelRise",
+        "Science"
+      ],
+      "state": "planned",
+      "attempts": 0
+    },
+    {
+      "id": "long",
+      "type": "long",
+      "asset": "long.mp4",
+      "title": "What If the Doomsday Glacier Collapsed?",
+      "caption": "What If the Doomsday Glacier Collapsed?",
+      "description": "In West Antarctica there is a glacier the size of Florida, and scientists warned in 2026 that the ice shelf holding it back could break up this year. Why Thwaites is called the Doomsday Glacier, how warm ocean water melts it from below, what its collapse would mean for sea levels and coastal cities, the 40-80 billion dollar plan to shield it with an underwater curtain, and why it is a warning rather than a countdown.\n\nSources: British Antarctic Survey / International Thwaites Glacier Collaboration; Live Science (May 2026); IPCC SROCC (2019); Moore, Wolovick et al. seabed curtain proposal; Siegert et al., Frontiers in Science (2025).\nNarration: AI voice (ElevenLabs).\n\n#WhatIf #DoomsdayGlacier #Thwaites #Antarctica #SeaLevelRise #Science\n(Chapters will be added after the voice-over.)",
+      "tags": [
+        "WhatIf",
+        "DoomsdayGlacier",
+        "Thwaites",
+        "Antarctica",
+        "SeaLevelRise",
+        "Science"
+      ],
+      "state": "planned",
+      "attempts": 0
+    },
+    {
+      "id": "short2",
+      "type": "short",
+      "asset": "short2.mp4",
+      "title": "A $40-80 Billion Curtain to Save the Doomsday Glacier? #Shorts",
+      "caption": "A $40-80 Billion Curtain to Save the Doomsday Glacier? #WhatIf #DoomsdayGlacier #Thwaites #Antarctica #SeaLevelRise #Science #Shorts",
+      "description": "A giant curtain under the sea. Full video on the channel.\n\n#WhatIf #DoomsdayGlacier #Thwaites #Antarctica #SeaLevelRise #Science #Shorts",
+      "tags": [
+        "WhatIf",
+        "DoomsdayGlacier",
+        "Thwaites",
+        "Antarctica",
+        "SeaLevelRise",
+        "Science"
+      ],
+      "state": "planned",
+      "attempts": 0
+    }
+  ]
+}
