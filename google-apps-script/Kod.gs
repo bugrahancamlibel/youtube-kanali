@@ -50,11 +50,13 @@ function onOpen() {
 }
 
 function kurulum() {
+  izinleriIste_();
   const ss = SpreadsheetApp.getActive();
   ss.setSpreadsheetTimeZone(TZ);
   const proj = sheet_(SH_PROJ, PROJ_HEAD, [60, 170, 360, 110, 60, 220, 90, 260, 10]);
   const cal = sheet_(SH_CAL, CAL_HEAD, [150, 40, 150, 90, 330, 230, 120, 330, 60, 120, 70, 10]);
-  sheet_(SH_LOG, ['Zaman', 'Olay'], [150, 900]);
+  const lg = sheet_(SH_LOG, ['Zaman', 'Olay'], [150, 900]);
+  if (lg.getLastRow() > 1) lg.getRange(2, 1, lg.getLastRow() - 1, 2).setBackground(null).setFontColor('#000000').setFontWeight('normal');
   const set = sheet_(SH_SET, ['Ayar', 'Değer', 'Açıklama'], [190, 280, 380]);
   const have = set.getLastRow() > 1 ? set.getRange(2, 1, set.getLastRow() - 1, 1).getValues().map(r => r[0]) : [];
   DEFAULTS.forEach(d => { if (have.indexOf(d[0]) < 0) set.appendRow(d); });
@@ -83,9 +85,15 @@ function anahtarlariGir() {
 }
 
 function simdiCalistir() {
+  izinleriIste_();
   PropertiesService.getScriptProperties().setProperty('SON_SENKRON', '0');
   calis();
   SpreadsheetApp.getActive().toast('Tamam. Ayrıntılar "Günlük" sayfasında.', 'YouTube', 5);
+}
+
+function izinleriIste_() {
+  // Google'ın izin ekranında bir kutu boş bırakıldıysa (ör. "harici hizmete bağlan") izin ekranını yeniden açar.
+  if (typeof ScriptApp.requireAllScopes === 'function' && ScriptApp.AuthMode) ScriptApp.requireAllScopes(ScriptApp.AuthMode.FULL);
 }
 
 function eksikler_() {
