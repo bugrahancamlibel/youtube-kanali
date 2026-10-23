@@ -67,10 +67,13 @@ Commit with a clear message and push to `main` after every finished step, so not
    Silent draft (only if no voice yet): `python3 audio_x.py music_draft.wav` and render `python3 main.py dN.mp4 x f0 f1`
    in 4 parallel parts, concat + mux -> push as `<slug>/draft.mp4` to the `videolar` branch (step 9).
 4. **Voice (cloud)**: put the narration in `projects/<slug>/ElevenLabs Metni.txt` (lines separated by blank lines), push,
-   then `gh workflow run seslendirme.yml -f project=<slug>`; find the run (`gh run list --workflow seslendirme.yml -L 1`),
-   `gh run watch <id>`, then `gh run download <id> -n vo-<slug> -D factory/<factory_dir>/vo/` -> `vo.mp3`
-   (convert: `ffmpeg -i vo.mp3 -ar 44100 vo/g1.wav`). If the run fails with "kredi yetersiz" / exit code 2: mark the
-   project `needs_voice`, stop voice work and tell the user. NEVER buy or upgrade anything.
+   then start the "Seslendirme" workflow with the REST API (GraphQL and `gh workflow run` do not work in sessions):
+   `gh api -X POST repos/bugrahancamlibel/youtube-kanali/actions/workflows/seslendirme.yml/dispatches -f ref=main -f 'inputs[project]=<slug>'`.
+   Poll every 30 s: `gh api "repos/bugrahancamlibel/youtube-kanali/actions/workflows/seslendirme.yml/runs?per_page=1" --jq '.workflow_runs[0] | [.status,.conclusion,.html_url]'`.
+   On success the audio is on the `videolar` branch: `gh api -H "Accept: application/vnd.github.raw"
+   "/repos/bugrahancamlibel/youtube-kanali/contents/<slug>/vo.mp3?ref=videolar" > vo/vo.mp3`, then
+   `ffmpeg -i vo/vo.mp3 -ar 44100 vo/g1.wav`. If the run fails (usually "ElevenLabs kredisi yetersiz"), keep the project
+   `needs_voice`, stop voice work and tell the user (give the run URL). NEVER buy or upgrade anything.
 5. **Sync**: `python3 vo/align.py vo/g1.wav` -> check every line duration vs expected; fix doubtful boundaries by
    inspecting silences; then `python3 vo/build.py` (set HL to the TRANS half-lengths) -> `vo/warp.json`.
 6. **Audio**: SFX section of `audio_*.py` for the scenes, `python3 audio_x.py music_vo.wav warp`, duck music under voice
@@ -90,12 +93,15 @@ Commit with a clear message and push to `main` after every finished step, so not
    Write `projects/<slug>/project.json` with `tools/make_project.py` (status `ready`, approved false, NO dates —
    the publisher assigns them on approval), `Bilgiler.txt` (title, description with chapters + sources +
    "Narration: AI voice (ElevenLabs)", tags, script, sources) and `shorts_plan.json`. Commit + push.
-10. **Ask for approval**: `gh label create onay-bekliyor --color fbca04 --force`, then
-    `gh issue create --label onay-bekliyor --title "[Onay] <NN> - <Title>" --body <body>` where the body contains the
-    marker line `<!-- project: <slug> -->`, a Turkish summary (topic, why now, lengths), links to the three videos
-    (`https://github.com/bugrahancamlibel/youtube-kanali/blob/videolar/<slug>/long.mp4` etc.), the Shorts hooks, sources, and: "Onaylamak için bu issue'ya **onay** yaz; istemiyorsan **ret** yaz.
-    Onaylayınca sıradaki boş günlere otomatik yerleşir." Also send the three videos with SendUserFile so the user can
-    watch them in the app, and finish with a Turkish summary (and a push notification if available).
+10. **Ask for approval** (REST only): create the label once
+    `gh api repos/bugrahancamlibel/youtube-kanali/labels -f name=onay-bekliyor -f color=fbca04` (422 = already exists, fine),
+    write the issue body to a file and run
+    `gh api repos/bugrahancamlibel/youtube-kanali/issues -f "title=[Onay] <NN> - <Title>" -F body=@body.md -f 'labels[]=onay-bekliyor'`.
+    The body must contain the marker line `<!-- project: <slug> -->`, a Turkish summary (topic, why now, lengths), links to
+    the three videos (`https://github.com/bugrahancamlibel/youtube-kanali/blob/videolar/<slug>/long.mp4` etc.), the
+    Shorts hooks, sources, and: "Onaylamak için bu issue'ya **onay** yaz; istemiyorsan **ret** yaz. Onaylayınca
+    sıradaki boş günlere otomatik yerleşir." Also send the three videos with SendUserFile so the user can watch them in
+    the app, and finish with a short Turkish summary.
 
 ## Publishing (fully automatic, GitHub Actions)
 - "Yayin" workflow runs every day at 20:35 and 21:35 Istanbul time: gives dates to newly approved projects
