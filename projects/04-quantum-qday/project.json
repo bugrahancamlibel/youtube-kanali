@@ -3,9 +3,9 @@
   "number": "04",
   "name": "Quantum Q-Day",
   "approved": false,
-  "status": "needs_voice",
+  "status": "on_hold",
   "factory_dir": "qday",
-  "note": "Sessiz taslak hazır (videolar dalı: draft.mp4). Google paneli sesi üretince haftalık çalışma final video + 2 Shorts yapıp onaya sunacak.",
+  "note": "Beklemede (kullanıcı kararı, 24 Eki 2026): şimdilik yüklenmeyecek, panelde ve haftalık üretimde kullanılmaz.",
   "uploads": [
     {
       "id": "short1",

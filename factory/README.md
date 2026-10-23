@@ -49,7 +49,8 @@ Your shell cannot reach ElevenLabs or Upload-Post; the Google panel does those c
 Commit with a clear message and push to `main` after every finished step, so nothing is lost if the session stops.
 
 ## Weekly run (each step must be verified before moving on)
-0. **Voice-pending projects come first.** List `projects/*/project.json`; any with `"status": "needs_voice"` is a
+0. **Voice-pending projects come first.** Projects with `"status": "on_hold"` (04, 05) are parked by the user: never touch,
+   voice or publish them. List `projects/*/project.json`; any with `"status": "needs_voice"` is a
    finished silent project (script, scenes, shorts_plan.json done, code in `factory/<factory_dir>/`). If the panel has
    already voiced the OLDEST one (`<slug>/vo.mp3` exists on the `videolar` branch, see step 4), finish it (steps 5-10)
    instead of starting a new topic. If no vo.mp3 exists for any of them (no ElevenLabs credits yet), you may still
