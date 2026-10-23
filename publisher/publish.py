@@ -134,14 +134,18 @@ def gh(*args, check=True):
     return subprocess.run(['gh', *args], capture_output=True, text=True, check=check)
 
 
-def download_asset(project, asset, dest):
-    tag = project['release_tag']
-    path = os.path.join(dest, asset)
+def download_asset(project, asset, dest, cfg=None):
+    """Videos live on the `videolar` branch: <slug>/<asset> (GitHub contents API, files up to 100 MB)."""
     if os.environ.get('LOCAL_ASSET_DIR'):            # tests
         return os.path.join(os.environ['LOCAL_ASSET_DIR'], asset)
-    r = gh('release', 'download', tag, '-p', asset, '-D', dest, '--clobber', check=False)
-    if r.returncode != 0 or not os.path.exists(path):
-        raise RuntimeError(f'release asset bulunamadı: {tag}/{asset}: {r.stderr.strip()[:300]}')
+    branch = (cfg or {}).get('video_branch', 'videolar')
+    repo = os.environ.get('GITHUB_REPOSITORY', 'bugrahancamlibel/youtube-kanali')
+    path = os.path.join(dest, asset)
+    with open(path, 'wb') as fh:
+        r = subprocess.run(['gh', 'api', '-H', 'Accept: application/vnd.github.raw',
+                            f"/repos/{repo}/contents/{project['slug']}/{asset}?ref={branch}"], stdout=fh, stderr=subprocess.PIPE)
+    if r.returncode != 0 or os.path.getsize(path) < 10000:
+        raise RuntimeError(f"video indirilemedi: {branch}:{project['slug']}/{asset}: {r.stderr.decode()[:300]}")
     return path
 
 
@@ -220,7 +224,7 @@ def platform_errors(results):
 def send_one(cfg, key, project, u, now, scheduled_utc=None):
     platforms = list(u.get('platforms') or (cfg['short_platforms'] if u['type'] == 'short' else cfg['long_platforms']))
     with tempfile.TemporaryDirectory() as tmp:
-        path = download_asset(project, u['asset'], tmp)
+        path = download_asset(project, u['asset'], tmp, cfg)
         code, body = post_upload(cfg, key, project, u, path, platforms, scheduled_utc)
         if code == 403 and 'tiktok' in platforms:
             log('  TikTok bu planda izinli değil, TikTok olmadan tekrar deneniyor')

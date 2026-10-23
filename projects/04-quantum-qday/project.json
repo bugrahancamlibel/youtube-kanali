@@ -2,11 +2,10 @@
   "slug": "04-quantum-qday",
   "number": "04",
   "name": "Quantum Q-Day",
-  "release_tag": "p04-quantum-qday",
   "approved": false,
   "status": "needs_voice",
   "factory_dir": "qday",
-  "note": "Sessiz taslak hazır (release: draft.mp4). Ses gelince final video + 2 Shorts üretilip onaya sunulacak.",
+  "note": "Sessiz taslak hazır (videolar dalı: draft.mp4). Ses gelince final video + 2 Shorts üretilip onaya sunulacak.",
   "uploads": [
     {
       "id": "short1",
@@ -62,5 +61,6 @@
       "state": "planned",
       "attempts": 0
     }
-  ]
+  ],
+  "videos": "videolar:04-quantum-qday/"
 }

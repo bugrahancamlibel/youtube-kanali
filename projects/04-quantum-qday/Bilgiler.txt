@@ -2,7 +2,7 @@ WHAT IF QUANTUM COMPUTERS BROKE ALL ENCRYPTION?
 ===============================================
 
 DURUM: SES BEKLİYOR
-Bu proje seslendirme hariç hazır. Sessiz taslak video GitHub release'inde (draft.mp4): alttaki yazılar
+Bu proje seslendirme hariç hazır. Sessiz taslak video `videolar` dalında (draft.mp4): alttaki yazılar
 sadece anlatımın nereye düşeceğini göstermek için var, final videoda olmayacak.
 
 SES GELDİĞİNDE NE OLACAK

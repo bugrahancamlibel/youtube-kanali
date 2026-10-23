@@ -2,7 +2,6 @@
   "slug": "01-deepfakes",
   "number": "01",
   "name": "Deepfakes",
-  "release_tag": "p01-deepfakes",
   "approved": true,
   "status": "ready",
   "approved_note": "2026-10-23: kanalın ilk 3 videosu, kullanıcı onayladı",
@@ -55,5 +54,6 @@
       "state": "planned",
       "attempts": 0
     }
-  ]
+  ],
+  "videos": "videolar:01-deepfakes/"
 }

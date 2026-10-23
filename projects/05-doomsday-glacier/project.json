@@ -2,11 +2,10 @@
   "slug": "05-doomsday-glacier",
   "number": "05",
   "name": "Doomsday Glacier",
-  "release_tag": "p05-doomsday-glacier",
   "approved": false,
   "status": "needs_voice",
   "factory_dir": "glacier",
-  "note": "Sessiz taslak hazır (release: draft.mp4). Ses gelince final video + 2 Shorts üretilip onaya sunulacak.",
+  "note": "Sessiz taslak hazır (videolar dalı: draft.mp4). Ses gelince final video + 2 Shorts üretilip onaya sunulacak.",
   "uploads": [
     {
       "id": "short1",
@@ -62,5 +61,6 @@
       "state": "planned",
       "attempts": 0
     }
-  ]
+  ],
+  "videos": "videolar:05-doomsday-glacier/"
 }

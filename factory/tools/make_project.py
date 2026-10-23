@@ -28,7 +28,7 @@ def build(p):
     L = p['long']
     ups.insert(1, {'id': 'long', 'type': 'long', 'asset': 'long.mp4', 'title': L['title'][:100], 'caption': L['title'],
                    'description': f"{L['description']}\n\n{tg}".strip(), 'tags': p.get('tags', []), 'state': 'planned', 'attempts': 0})
-    return {'slug': p['slug'], 'number': p['number'], 'name': p['name'], 'release_tag': 'p' + p['slug'],
+    return {'slug': p['slug'], 'number': p['number'], 'name': p['name'], 'videos': f"videolar:{p['slug']}/",
             'approved': False, 'status': p.get('status', 'ready'), 'factory_dir': p.get('factory_dir', ''), 'uploads': ups}
 
 

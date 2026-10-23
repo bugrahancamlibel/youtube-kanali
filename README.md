@@ -4,7 +4,7 @@ Bilgisayarın kapalıyken de çalışır. Her şey GitHub'da durur:
 
 | Ne | Nerede |
 |---|---|
-| Videolar | **Releases** (her proje için `long.mp4`, `short1.mp4`, `short2.mp4`) |
+| Videolar | **`videolar` dalı** (her proje klasöründe `long.mp4`, `short1.mp4`, `short2.mp4`) |
 | Proje bilgileri ve yayın durumu | `projects/<NN-isim>/project.json`, `Bilgiler.txt` |
 | Yayın takvimi | [`YAYIN_TAKVIMI.md`](YAYIN_TAKVIMI.md) (otomatik güncellenir) |
 | Üretim kodu | `factory/` (haftalık Claude çalışması bunu kullanır) |
@@ -12,7 +12,7 @@ Bilgisayarın kapalıyken de çalışır. Her şey GitHub'da durur:
 
 ## Nasıl çalışır
 1. **Üretim (her pazartesi, Claude, bulutta):** gündemden konu seçer, senaryoyu yazar, animasyonu yapar,
-   sesi ElevenLabs API'den alır, uzun video + 2 Shorts üretir. Videoları Release'e yükler ve
+   sesi ElevenLabs API'den alır, uzun video + 2 Shorts üretir. Videoları `videolar` dalına yükler ve
    **`[Onay] ...` başlıklı bir issue açar** (GitHub'dan bildirim gelir, videoları Claude uygulamasında da izleyebilirsin).
 2. **Onay (sen):** o issue'ya **`onay`** yazarsın (beğenmediysen **`ret`**). Telefondan GitHub uygulamasıyla da olur.
    Onaylanan proje takvimdeki ilk boş günlere otomatik yerleşir.

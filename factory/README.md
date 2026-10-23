@@ -23,7 +23,7 @@ repo root
   publisher/approve.py            handles "onay"/"ret" comments on approval issues (Actions "Onay")
   publisher/tts.py                ElevenLabs API voice-over (Actions "Seslendirme", key is a repo secret)
   YAYIN_TAKVIMI.md                generated publishing calendar
-  GitHub Releases  p<NN-slug>     the videos: long.mp4, short1.mp4, short2.mp4 (+ draft.mp4 for silent drafts)
+  branch `videolar`: <NN-slug>/   the videos: long.mp4, short1.mp4, short2.mp4 (+ draft.mp4 for silent drafts)
 factory/
   render.py, deepfake.py          core drawing helpers (person, face, glitch, pill, bubble, robot, big_eye…)
   long/base.py                    1920x1080 helpers (bg, hills, card, robot2, phone, money, stamp…)
@@ -43,8 +43,10 @@ factory/
 ```
 
 ## Getting the repo in a session
-Attach it with the add_repo tool (owner `bugrahancamlibel`, repo `youtube-kanali`, access `push`), clone it, and use
-`gh` for releases, workflows and issues (`gh release ...`, `gh workflow run ...`, `gh issue ...`).
+Attach it with the add_repo tool (owner `bugrahancamlibel`, repo `youtube-kanali`, access `push`), clone it
+(`git clone --depth 1`, main branch only — do not fetch the big `videolar` branch), and use `gh` for workflows and
+issues (`gh workflow run ...`, `gh issue ...`). GitHub Releases are NOT available to Claude sessions (HTTP 403):
+videos go to the `videolar` branch instead (see step 9). Each video file must be < 95 MB.
 Commit with a clear message and push to `main` after every finished step, so nothing is lost if the session stops.
 
 ## Weekly run (each step must be verified before moving on)
@@ -63,7 +65,7 @@ Commit with a clear message and push to `main` after every finished step, so not
    (`python3 main.py st stills <times>`) and review contact sheets (`tools/sheet.py`); fix overlaps / empty frames.
    Write `shorts_plan.json` (see `factory/qday/shorts_plan.json`; HL = TRANS half-lengths).
    Silent draft (only if no voice yet): `python3 audio_x.py music_draft.wav` and render `python3 main.py dN.mp4 x f0 f1`
-   in 4 parallel parts, concat + mux -> upload as `draft.mp4` to the release.
+   in 4 parallel parts, concat + mux -> push as `<slug>/draft.mp4` to the `videolar` branch (step 9).
 4. **Voice (cloud)**: put the narration in `projects/<slug>/ElevenLabs Metni.txt` (lines separated by blank lines), push,
    then `gh workflow run seslendirme.yml -f project=<slug>`; find the run (`gh run list --workflow seslendirme.yml -L 1`),
    `gh run watch <id>`, then `gh run download <id> -n vo-<slug> -D factory/<factory_dir>/vo/` -> `vo.mp3`
@@ -74,21 +76,24 @@ Commit with a clear message and push to `main` after every finished step, so not
 6. **Audio**: SFX section of `audio_*.py` for the scenes, `python3 audio_x.py music_vo.wav warp`, duck music under voice
    -> `final_mix.wav`; compute `captions_real.json` ([t0, t1, text, scene, line] in real time).
 7. **Render**: `N=$(python3 main.py x warp n)`; render in parallel parts (`main.py partX.mp4 warp a b`), concat + mux.
-   Final long video: x264 `-tune animation -crf 20`, AAC 192k (no 30 MB limit any more; keep it under ~200 MB).
+   Final long video: x264 `-tune animation -crf 20 -maxrate 2500k -bufsize 5000k`, AAC 192k; must stay < 95 MB.
    Check a 1-frame-per-10s contact sheet.
 8. **Shorts**: `python3 ../tools/shorts_from_plan.py . <final_long.mp4> <outdir>` (reads `shorts_plan.json`).
    RULES (user feedback, Oct 2026): every Short must END right after a payoff line (punchline / reveal), never
    mid-thought, never bleeding into the next line or a scene transition; the tool freezes a hero frame and adds a
    "WATCH THE FULL VIDEO" end card. Check the last 3 s of each Short. Hook text must be accurate.
-9. **Package**: `gh release create p<slug> --title "<NN> - <Name>" --notes "<short summary>"` (or `gh release upload
-   --clobber` if it exists) with assets named exactly `long.mp4`, `short1.mp4`, `short2.mp4`.
+9. **Package**: push the videos to the `videolar` branch as `<slug>/long.mp4`, `<slug>/short1.mp4`, `<slug>/short2.mp4`
+   (exact names). Do it from a separate small clone so main stays light:
+   `git clone --depth 1 -b videolar --filter=blob:none --no-checkout <url> /tmp/v && cd /tmp/v && git sparse-checkout set <slug>
+   && git checkout videolar`, copy the files, commit, `git push`. Verify with
+   `gh api -H "Accept: application/vnd.github.raw" "/repos/bugrahancamlibel/youtube-kanali/contents/<slug>/long.mp4?ref=videolar" | wc -c`.
    Write `projects/<slug>/project.json` with `tools/make_project.py` (status `ready`, approved false, NO dates —
    the publisher assigns them on approval), `Bilgiler.txt` (title, description with chapters + sources +
    "Narration: AI voice (ElevenLabs)", tags, script, sources) and `shorts_plan.json`. Commit + push.
 10. **Ask for approval**: `gh label create onay-bekliyor --color fbca04 --force`, then
     `gh issue create --label onay-bekliyor --title "[Onay] <NN> - <Title>" --body <body>` where the body contains the
-    marker line `<!-- project: <slug> -->`, a Turkish summary (topic, why now, lengths), links to the three release
-    assets, the Shorts hooks, sources, and: "Onaylamak için bu issue'ya **onay** yaz; istemiyorsan **ret** yaz.
+    marker line `<!-- project: <slug> -->`, a Turkish summary (topic, why now, lengths), links to the three videos
+    (`https://github.com/bugrahancamlibel/youtube-kanali/blob/videolar/<slug>/long.mp4` etc.), the Shorts hooks, sources, and: "Onaylamak için bu issue'ya **onay** yaz; istemiyorsan **ret** yaz.
     Onaylayınca sıradaki boş günlere otomatik yerleşir." Also send the three videos with SendUserFile so the user can
     watch them in the app, and finish with a Turkish summary (and a push notification if available).
 

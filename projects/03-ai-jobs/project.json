@@ -2,7 +2,6 @@
   "slug": "03-ai-jobs",
   "number": "03",
   "name": "AI Jobs",
-  "release_tag": "p03-ai-jobs",
   "approved": true,
   "status": "ready",
   "approved_note": "2026-10-23: kanalın ilk 3 videosu, kullanıcı onayladı",
@@ -58,5 +57,6 @@
       "state": "planned",
       "attempts": 0
     }
-  ]
+  ],
+  "videos": "videolar:03-ai-jobs/"
 }
