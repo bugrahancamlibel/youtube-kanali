@@ -7,7 +7,7 @@
  *    ElevenLabs ile seslendirip GitHub'a koyar, eski yayınların sonucunu kontrol eder.
  *  - Onay: "Projeler" sayfasında "Onay" kutusunu işaretle. Proje takvimdeki ilk boş günlere yerleşir.
  *
- * Kurulum: README_TR.md (aynı klasörde).  Anahtarlar sadece bu projenin "Script properties" alanında durur.
+ * Kurulum: KURULUM.md (aynı klasörde).  Anahtarlar sadece bu projenin "Script properties" alanında durur.
  */
 
 const REPO = 'bugrahancamlibel/youtube-kanali';
@@ -64,8 +64,10 @@ function kurulum() {
   PropertiesService.getScriptProperties().setProperty('SON_SENKRON', '0');
   calis();
   const miss = eksikler_();
-  SpreadsheetApp.getUi().alert('Kurulum tamam. Sistem artık her 15 dakikada bir kendiliğinden çalışacak.' +
-    (miss.length ? '\n\nEksikler:\n- ' + miss.join('\n- ') : '\n\nHer şey hazır.'));
+  const msg = 'Kurulum tamam. Sistem artık her 15 dakikada bir kendiliğinden çalışacak.' +
+    (miss.length ? '\n\nEksikler:\n- ' + miss.join('\n- ') : '\n\nHer şey hazır.');
+  log_(msg.replace(/\n+/g, ' '));
+  try { SpreadsheetApp.getUi().alert(msg); } catch (e) { Logger.log(msg); }   // editörden çalıştırınca UI yok
 }
 
 function anahtarlariGir() {
@@ -520,7 +522,8 @@ function log_(msg) {
   const sh = SpreadsheetApp.getActive().getSheetByName(SH_LOG);
   if (!sh) return;
   sh.insertRowAfter(1);
-  sh.getRange(2, 1, 1, 2).setValues([[fmt_(new Date()), String(msg).slice(0, 1500)]]);
+  sh.getRange(2, 1, 1, 2).setValues([[fmt_(new Date()), String(msg).slice(0, 1500)]])
+    .setBackground(null).setFontColor('#000000').setFontWeight('normal');
   if (sh.getLastRow() > 600) sh.deleteRows(601, sh.getLastRow() - 600);
 }
 
