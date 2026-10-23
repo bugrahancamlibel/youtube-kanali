@@ -5,7 +5,7 @@
   "approved": false,
   "status": "needs_voice",
   "factory_dir": "glacier",
-  "note": "Sessiz taslak hazır (videolar dalı: draft.mp4). Ses gelince final video + 2 Shorts üretilip onaya sunulacak.",
+  "note": "Sessiz taslak hazır (videolar dalı: draft.mp4). Google paneli sesi üretince haftalık çalışma final video + 2 Shorts yapıp onaya sunacak.",
   "uploads": [
     {
       "id": "short1",
@@ -21,9 +21,7 @@
         "Antarctica",
         "SeaLevelRise",
         "Science"
-      ],
-      "state": "planned",
-      "attempts": 0
+      ]
     },
     {
       "id": "long",
@@ -39,9 +37,7 @@
         "Antarctica",
         "SeaLevelRise",
         "Science"
-      ],
-      "state": "planned",
-      "attempts": 0
+      ]
     },
     {
       "id": "short2",
@@ -57,9 +53,7 @@
         "Antarctica",
         "SeaLevelRise",
         "Science"
-      ],
-      "state": "planned",
-      "attempts": 0
+      ]
     }
   ],
   "videos": "videolar:05-doomsday-glacier/"

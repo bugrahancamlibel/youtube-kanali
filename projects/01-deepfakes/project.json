@@ -18,9 +18,7 @@
         "Deepfake",
         "Technology"
       ],
-      "publish_at": "2026-11-03T20:30:00+03:00",
-      "state": "planned",
-      "attempts": 0
+      "publish_at": "2026-11-03T20:30:00+03:00"
     },
     {
       "id": "long",
@@ -34,9 +32,7 @@
         "Deepfake",
         "Technology"
       ],
-      "publish_at": "2026-11-04T20:30:00+03:00",
-      "state": "planned",
-      "attempts": 0
+      "publish_at": "2026-11-04T20:30:00+03:00"
     },
     {
       "id": "short2",
@@ -50,9 +46,7 @@
         "Deepfake",
         "Technology"
       ],
-      "publish_at": "2026-11-06T20:30:00+03:00",
-      "state": "planned",
-      "attempts": 0
+      "publish_at": "2026-11-06T20:30:00+03:00"
     }
   ],
   "videos": "videolar:01-deepfakes/"

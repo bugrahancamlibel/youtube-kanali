@@ -16,14 +16,11 @@ Run all project commands from inside the project folder (e.g. `cd factory/qday &
 ## Layout
 ```
 repo root
-  config.json                     publisher settings (Upload-Post user, platforms, publish time)
-  projects/<NN-slug>/project.json one per topic: titles, descriptions, state of every upload (read by the publisher)
+  projects/index.json             list of project slugs (the Google panel reads it) - add every new project here
+  projects/<NN-slug>/project.json one per topic: titles, descriptions, tags, status (ready / needs_voice), approved
   projects/<NN-slug>/Bilgiler.txt, ElevenLabs Metni.txt, shorts_plan.json
-  publisher/publish.py            cloud publisher (GitHub Actions "Yayin", daily 20:35 + 21:35 Istanbul)
-  publisher/approve.py            handles "onay"/"ret" comments on approval issues (Actions "Onay")
-  publisher/tts.py                ElevenLabs API voice-over (Actions "Seslendirme", key is a repo secret)
-  YAYIN_TAKVIMI.md                generated publishing calendar
-  branch `videolar`: <NN-slug>/   the videos: long.mp4, short1.mp4, short2.mp4 (+ draft.mp4 for silent drafts)
+  google-apps-script/Kod.gs       the publishing panel (runs in the user's Google account, NOT editable by you)
+  branch `videolar`: <NN-slug>/   long.mp4, short1.mp4, short2.mp4 (+ draft.mp4 silent draft, vo.mp3 voice from the panel)
 factory/
   render.py, deepfake.py          core drawing helpers (person, face, glitch, pill, bubble, robot, big_eye…)
   long/base.py                    1920x1080 helpers (bg, hills, card, robot2, phone, money, stamp…)
@@ -44,17 +41,20 @@ factory/
 
 ## Getting the repo in a session
 Attach it with the add_repo tool (owner `bugrahancamlibel`, repo `youtube-kanali`, access `push`), clone it
-(`git clone --depth 1`, main branch only — do not fetch the big `videolar` branch), and use `gh` for workflows and
-issues (`gh workflow run ...`, `gh issue ...`). GitHub Releases are NOT available to Claude sessions (HTTP 403):
-videos go to the `videolar` branch instead (see step 9). Each video file must be < 95 MB.
+(`git clone --depth 1`, main branch only — do not fetch the big `videolar` branch). Use `gh api` (REST) only;
+GraphQL, GitHub Releases and GitHub Actions are NOT available (the user's GitHub account cannot run Actions).
+Videos go to the `videolar` branch (step 9). Each video file must be < 48 MB (the panel may need to download it).
+The repo must stay public: the panel and Upload-Post read the videos from raw.githubusercontent.com.
+Your shell cannot reach ElevenLabs or Upload-Post; the Google panel does those calls.
 Commit with a clear message and push to `main` after every finished step, so nothing is lost if the session stops.
 
 ## Weekly run (each step must be verified before moving on)
 0. **Voice-pending projects come first.** List `projects/*/project.json`; any with `"status": "needs_voice"` is a
-   finished silent project (script, scenes, shorts_plan.json done, code in `factory/<factory_dir>/`). Try to voice the
-   OLDEST one (step 4). If that works, finish it (steps 5-10) instead of starting a new topic.
-   If there is not enough ElevenLabs credit: do NOT start new work that needs voice; you may still build ONE new silent
-   project (steps 1-3 + silent draft, status `needs_voice`) if fewer than 3 projects are waiting, then notify the user.
+   finished silent project (script, scenes, shorts_plan.json done, code in `factory/<factory_dir>/`). If the panel has
+   already voiced the OLDEST one (`<slug>/vo.mp3` exists on the `videolar` branch, see step 4), finish it (steps 5-10)
+   instead of starting a new topic. If no vo.mp3 exists for any of them (no ElevenLabs credits yet), you may still
+   build ONE new silent project (steps 1-3 + silent draft, status `needs_voice`) if fewer than 3 projects are waiting,
+   then tell the user that voice credits are needed.
 1. **Topic research** (web): what's trending *this week* in science / tech / AI / space + proven "What if" formats.
    Do not repeat a topic that already has a folder in `projects/`. Verify every number with a reputable source; keep a source list.
 2. **Script**: copy `factory/aijobs/` -> `factory/<slug>/`, rewrite `script.py` (8 scenes, ~28–35 lines,
@@ -66,49 +66,42 @@ Commit with a clear message and push to `main` after every finished step, so not
    Write `shorts_plan.json` (see `factory/qday/shorts_plan.json`; HL = TRANS half-lengths).
    Silent draft (only if no voice yet): `python3 audio_x.py music_draft.wav` and render `python3 main.py dN.mp4 x f0 f1`
    in 4 parallel parts, concat + mux -> push as `<slug>/draft.mp4` to the `videolar` branch (step 9).
-4. **Voice (cloud)**: put the narration in `projects/<slug>/ElevenLabs Metni.txt` (lines separated by blank lines), push,
-   then start the "Seslendirme" workflow with the REST API (GraphQL and `gh workflow run` do not work in sessions):
-   `gh api -X POST repos/bugrahancamlibel/youtube-kanali/actions/workflows/seslendirme.yml/dispatches -f ref=main -f 'inputs[project]=<slug>'`.
-   Poll every 30 s: `gh api "repos/bugrahancamlibel/youtube-kanali/actions/workflows/seslendirme.yml/runs?per_page=1" --jq '.workflow_runs[0] | [.status,.conclusion,.html_url]'`.
-   On success the audio is on the `videolar` branch: `gh api -H "Accept: application/vnd.github.raw"
-   "/repos/bugrahancamlibel/youtube-kanali/contents/<slug>/vo.mp3?ref=videolar" > vo/vo.mp3`, then
-   `ffmpeg -i vo/vo.mp3 -ar 44100 vo/g1.wav`. If the run fails (usually "ElevenLabs kredisi yetersiz"), keep the project
-   `needs_voice`, stop voice work and tell the user (give the run URL). NEVER buy or upgrade anything.
+4. **Voice (via the Google panel)**: put the narration in `projects/<slug>/ElevenLabs Metni.txt` (lines separated by
+   blank lines), write project.json with `"status": "needs_voice"`, add the slug to `projects/index.json`, commit + push
+   EARLY in the session. The panel checks every hour, voices it with the user's ElevenLabs key (model eleven_v4, voice
+   "Max - Elearning and Documentary") and commits `<slug>/vo.mp3` to the `videolar` branch. Meanwhile build the scenes.
+   Check with `gh api -H "Accept: application/vnd.github.raw" "/repos/bugrahancamlibel/youtube-kanali/contents/<slug>/vo.mp3?ref=videolar" > vo/vo.mp3`
+   (a JSON 404 message instead of audio = not there yet; re-check every ~10 min, give up after ~90 min).
+   Then `ffmpeg -i vo/vo.mp3 -ar 44100 vo/g1.wav`. If it never arrives (usually: not enough ElevenLabs credits),
+   keep `needs_voice`, push a silent draft as `<slug>/draft.mp4`, and tell the user to look at the "Ses" column of the
+   "Projeler" sheet. NEVER buy or upgrade anything.
 5. **Sync**: `python3 vo/align.py vo/g1.wav` -> check every line duration vs expected; fix doubtful boundaries by
    inspecting silences; then `python3 vo/build.py` (set HL to the TRANS half-lengths) -> `vo/warp.json`.
 6. **Audio**: SFX section of `audio_*.py` for the scenes, `python3 audio_x.py music_vo.wav warp`, duck music under voice
    -> `final_mix.wav`; compute `captions_real.json` ([t0, t1, text, scene, line] in real time).
 7. **Render**: `N=$(python3 main.py x warp n)`; render in parallel parts (`main.py partX.mp4 warp a b`), concat + mux.
-   Final long video: x264 `-tune animation -crf 20 -maxrate 2500k -bufsize 5000k`, AAC 192k; must stay < 95 MB.
+   Final long video: x264 `-tune animation -crf 21 -maxrate 1800k -bufsize 3600k`, AAC 192k; must stay < 48 MB.
    Check a 1-frame-per-10s contact sheet.
 8. **Shorts**: `python3 ../tools/shorts_from_plan.py . <final_long.mp4> <outdir>` (reads `shorts_plan.json`).
    RULES (user feedback, Oct 2026): every Short must END right after a payoff line (punchline / reveal), never
    mid-thought, never bleeding into the next line or a scene transition; the tool freezes a hero frame and adds a
    "WATCH THE FULL VIDEO" end card. Check the last 3 s of each Short. Hook text must be accurate.
 9. **Package**: push the videos to the `videolar` branch as `<slug>/long.mp4`, `<slug>/short1.mp4`, `<slug>/short2.mp4`
-   (exact names). Do it from a separate small clone so main stays light:
+   (exact names, each < 48 MB). Do it from a separate small clone so main stays light:
    `git clone --depth 1 -b videolar --filter=blob:none --no-checkout <url> /tmp/v && cd /tmp/v && git sparse-checkout set <slug>
    && git checkout videolar`, copy the files, commit, `git push`. Verify with
-   `gh api -H "Accept: application/vnd.github.raw" "/repos/bugrahancamlibel/youtube-kanali/contents/<slug>/long.mp4?ref=videolar" | wc -c`.
-   Write `projects/<slug>/project.json` with `tools/make_project.py` (status `ready`, approved false, NO dates —
-   the publisher assigns them on approval), `Bilgiler.txt` (title, description with chapters + sources +
-   "Narration: AI voice (ElevenLabs)", tags, script, sources) and `shorts_plan.json`. Commit + push.
-10. **Ask for approval** (REST only): create the label once
-    `gh api repos/bugrahancamlibel/youtube-kanali/labels -f name=onay-bekliyor -f color=fbca04` (422 = already exists, fine),
-    write the issue body to a file and run
-    `gh api repos/bugrahancamlibel/youtube-kanali/issues -f "title=[Onay] <NN> - <Title>" -F body=@body.md -f 'labels[]=onay-bekliyor'`.
-    The body must contain the marker line `<!-- project: <slug> -->`, a Turkish summary (topic, why now, lengths), links to
-    the three videos (`https://github.com/bugrahancamlibel/youtube-kanali/blob/videolar/<slug>/long.mp4` etc.), the
-    Shorts hooks, sources, and: "Onaylamak için bu issue'ya **onay** yaz; istemiyorsan **ret** yaz. Onaylayınca
-    sıradaki boş günlere otomatik yerleşir." Also send the three videos with SendUserFile so the user can watch them in
-    the app, and finish with a short Turkish summary.
+   `curl -sI https://raw.githubusercontent.com/bugrahancamlibel/youtube-kanali/videolar/<slug>/long.mp4` (HTTP 200).
+   Then write `projects/<slug>/project.json` with `tools/make_project.py` (`"status": "ready"`, approved false, NO
+   dates), `Bilgiler.txt` and `shorts_plan.json`, make sure the slug is in `projects/index.json`, commit + push LAST
+   (the panel treats `ready` as "videos are on the videolar branch").
+10. **Ask for approval**: within an hour the panel e-mails the user "Onay bekliyor" with links. Also send the three
+    videos with SendUserFile so the user can watch them in the app, and finish with a short Turkish summary that ends
+    with: "Beğendiysen Google E-Tablosu'nda Projeler sayfasındaki Onay kutusunu işaretle."
 
-## Publishing (fully automatic, GitHub Actions)
-- "Yayin" workflow runs every day at 20:35 and 21:35 Istanbul time: gives dates to newly approved projects
-  (Short 1, long video next day, Short 2 two days later; next project two days after that; 20:30), shifts the
-  remaining plan by whole days if it fell behind (order and spacing kept), uploads whatever is due to Upload-Post
-  (secret `UPLOAD_POST_API_KEY`, user name in `config.json`), and writes the state back.
-- "Onay" workflow: the user's "onay" / "ret" comment on an `onay-bekliyor` issue approves / rejects the project.
-- `config.json` `mode`: `just_in_time` (default, works on any Upload-Post plan) or `schedule_ahead` (sends every
-  approved item to Upload-Post at once with `scheduled_date`; needs a paid plan).
-- Never publish anything by hand and never change `state` of uploads unless the user asks.
+## Publishing (fully automatic, Google Apps Script panel — not your job)
+- The user's Google Sheet "YouTube Yayın Paneli" (code: google-apps-script/Kod.gs) runs every 15 minutes in Google's cloud:
+  imports projects from index.json, voices `needs_voice` projects, puts approved projects on the calendar
+  (Short 1, long video next day, Short 2 two days later; next project two days after that; 20:30 Istanbul),
+  shifts the remaining plan by whole days if it fell behind, and posts what is due via Upload-Post.
+- Approval = the user ticks the "Onay" checkbox in the "Projeler" sheet.
+- Never change approved projects' project.json uploads (titles may be fixed only if the user asks).

@@ -6,10 +6,10 @@ Bu proje seslendirme hariç hazır. Sessiz taslak video `videolar` dalında (dra
 sadece anlatımın nereye düşeceğini göstermek için var, final videoda olmayacak.
 
 SES GELDİĞİNDE NE OLACAK
-1) Seslendirme bulutta yapılır: GitHub'daki "Seslendirme" iş akışı ElevenLabs API ile sesi üretir
-   ("Max - Elearning and Documentary", Eleven v4). Metin: "ElevenLabs Metni.txt" (3.355 karakter).
-2) Haftalık Claude çalışması sesi cümlelere hizalar, final uzun videoyu ve 2 Shorts'u üretir ve
-   onay için bir GitHub issue'su açar. Issue'ya "onay" yazınca otomatik takvime girer ve yayınlanır.
+1) Google E-Tablosu'ndaki "YouTube Yayın Paneli" ElevenLabs kredisi olduğunda sesi kendiliğinden üretir
+   ("Max - Elearning and Documentary", Eleven v4) ve GitHub'a koyar (videolar/<proje>/vo.mp3).
+2) Pazartesi Claude çalışması sesi cümlelere hizalar, final uzun videoyu ve 2 Shorts'u üretir.
+3) Panel sana "Onay bekliyor" e-postası atar; "Projeler" sayfasında "Onay" kutusunu işaretleyince takvime girer.
 
 UZUN VİDEO (YouTube, yatay, taslak süre ~3:41; final süre sese göre biraz değişir)
 Başlık: What If Quantum Computers Broke All Encryption?

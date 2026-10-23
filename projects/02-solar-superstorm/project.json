@@ -19,9 +19,7 @@
         "Space",
         "Science"
       ],
-      "publish_at": "2026-10-29T20:30:00+03:00",
-      "state": "planned",
-      "attempts": 0
+      "publish_at": "2026-10-29T20:30:00+03:00"
     },
     {
       "id": "long",
@@ -36,9 +34,7 @@
         "Space",
         "Science"
       ],
-      "publish_at": "2026-10-30T20:30:00+03:00",
-      "state": "planned",
-      "attempts": 0
+      "publish_at": "2026-10-30T20:30:00+03:00"
     },
     {
       "id": "short2",
@@ -53,9 +49,7 @@
         "Space",
         "Science"
       ],
-      "publish_at": "2026-11-01T20:30:00+03:00",
-      "state": "planned",
-      "attempts": 0
+      "publish_at": "2026-11-01T20:30:00+03:00"
     }
   ],
   "videos": "videolar:02-solar-superstorm/"

@@ -19,9 +19,7 @@
         "Jobs",
         "FutureOfWork"
       ],
-      "publish_at": "2026-10-24T20:30:00+03:00",
-      "state": "planned",
-      "attempts": 0
+      "publish_at": "2026-10-24T20:30:00+03:00"
     },
     {
       "id": "long",
@@ -36,9 +34,7 @@
         "Jobs",
         "FutureOfWork"
       ],
-      "publish_at": "2026-10-25T20:30:00+03:00",
-      "state": "planned",
-      "attempts": 0
+      "publish_at": "2026-10-25T20:30:00+03:00"
     },
     {
       "id": "short2",
@@ -53,9 +49,7 @@
         "Jobs",
         "FutureOfWork"
       ],
-      "publish_at": "2026-10-27T20:30:00+03:00",
-      "state": "planned",
-      "attempts": 0
+      "publish_at": "2026-10-27T20:30:00+03:00"
     }
   ],
   "videos": "videolar:03-ai-jobs/"
